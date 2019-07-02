@@ -10,6 +10,7 @@ public class Account implements Serializable {
     private double balance;
     private static double annualInterestRate;
     private Date dateCreated;
+    private int pin;
 
     public Account(){
         id = 0;
@@ -65,4 +66,11 @@ public class Account implements Serializable {
         this.balance += amount;
     }
 
+    public int getPin() {
+        return pin;
+    }
+
+    public void setPin(int pin) {
+        this.pin = pin;
+    }
 }

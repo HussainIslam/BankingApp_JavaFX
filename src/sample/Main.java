@@ -42,6 +42,12 @@ public class Main extends Application {
             }
         }
 
+
+        Parent root = FXMLLoader.load(getClass().getResource("Custom.fxml"));
+        primaryStage.setTitle("ATM");
+        primaryStage.setScene(new Scene(root, 500, 275));
+        primaryStage.show();
+
     }
 
 
