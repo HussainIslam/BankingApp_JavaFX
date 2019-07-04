@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -13,6 +14,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.Window;
+import javafx.stage.WindowEvent;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -130,22 +133,27 @@ public class Main extends Application {
                     register.setOnAction(event -> {
                         String fName = textFirstName.getText();
                         String lName = textLastName.getText();
-                        int id = Integer.parseInt(accountNumber);
-                        double balance = Double.parseDouble(textBalance.getText());
-                        int pin = Integer.parseInt(textPIN.getText());
-                        accountList.add(new Account(id, fName, lName, balance, pin));
-
-                        HBox success = new HBox();
-                        Label labelSucess = new Label("New Account Created Successfully!");
-                        success.setAlignment(Pos.CENTER);
-                        success.getChildren().add(labelSucess);
-                        Scene successScene = new Scene(success, 400, 400);
-                        regStage.setScene(successScene);
-                        regStage.show();
-                        System.out.println("New Account Created");
-
+                        try{
+                            int id = Integer.parseInt(accountNumber);
+                            double balance = Double.parseDouble(textBalance.getText());
+                            int pin = Integer.parseInt(textPIN.getText());
+                            accountList.add(new Account(id, fName, lName, balance, pin));
+                            HBox success = new HBox();
+                            Label labelSucess = new Label("New Account Created Successfully!");
+                            success.setAlignment(Pos.CENTER);
+                            success.getChildren().add(labelSucess);
+                            Scene successScene = new Scene(success, 400, 400);
+                            regStage.setScene(successScene);
+                            regStage.show();
+                        }
+                        catch (Exception ex){
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setTitle("Error!");
+                            alert.setHeaderText("Can not create Account");
+                            alert.setContentText("The Account could not be created! Please try with valid dataset");
+                            alert.showAndWait();
+                        }
                     });
-
                 }
                 else{
                     final int i = index;
