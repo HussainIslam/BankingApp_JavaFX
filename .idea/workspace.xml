@@ -21,10 +21,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+            <state relative-caret-position="370">
+              <caret line="228" column="50" selection-start-line="228" selection-start-column="50" selection-end-line="228" selection-end-column="50" />
               <folding>
-                <element signature="e#11325#11326#0" expanded="true" />
+                <element signature="e#11814#11815#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -171,7 +171,21 @@
       <option name="project" value="LOCAL" />
       <updated>1562275565342</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed formatting for large numbers">
+      <created>1562276302279</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1562276302279</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed negative balance at account creatiion">
+      <created>1562276935843</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562276935843</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -212,7 +226,9 @@
     <MESSAGE value="added account creation error message" />
     <MESSAGE value="added error message for withdrawal and warning for negative balance" />
     <MESSAGE value="error message for depositing added" />
-    <option name="LAST_COMMIT_MESSAGE" value="error message for depositing added" />
+    <MESSAGE value="fixed formatting for large numbers" />
+    <MESSAGE value="fixed negative balance at account creatiion" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed negative balance at account creatiion" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/javafx-sdk-12.0.1/lib/javafx.base.jar!/javafx/event/EventHandler.class">
@@ -244,10 +260,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+        <state relative-caret-position="370">
+          <caret line="228" column="50" selection-start-line="228" selection-start-column="50" selection-end-line="228" selection-end-column="50" />
           <folding>
-            <element signature="e#11325#11326#0" expanded="true" />
+            <element signature="e#11814#11815#0" expanded="true" />
           </folding>
         </state>
       </provider>

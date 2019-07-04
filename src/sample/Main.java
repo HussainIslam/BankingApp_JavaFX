@@ -196,12 +196,16 @@ public class Main extends Application {
                     btnWithdraw.setOnAction(wit ->{
                         try{
                             int wAmount = Integer.parseInt(withdrawInput.getText());
+                            if(wAmount < 0){
+                                throw new Exception();
+                            }
                             if (accountList.get(i).getBalance() - wAmount >= 0) {
                                 accountList.get(i).setBalance(accountList.get(i).getBalance() - wAmount);
                             }
                             else{
                                 this.showError("Warning!!", "Can not withdraw", "You can not withdraw money more than your balance ");
                             }
+                            withdrawInput.setText("");
                             txtBalance.setText("Current balance: " +formatter.format(accountList.get(i).getBalance()));
                         }
                         catch (Exception ex){
@@ -218,7 +222,11 @@ public class Main extends Application {
                     btnDeposit.setOnAction(dep ->{
                         try{
                             int dAmount = Integer.parseInt(depositInput.getText());
+                            if ( dAmount < 0 ) {
+                                throw new Exception();
+                            }
                             accountList.get(i).setBalance(accountList.get(i).getBalance() + dAmount);
+                            depositInput.setText("");
                             txtBalance.setText("Current balance: " +formatter.format(accountList.get(i).getBalance()));
                         }
                         catch (Exception ex){
@@ -240,8 +248,6 @@ public class Main extends Application {
                         emptyInput.hide();
                     });
                 }
-
-
             }
         });
 
