@@ -56,7 +56,6 @@ public class Main extends Application {
         }
 
 
-        //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         VBox mainPane = new VBox();
         mainPane.setSpacing(15);
         mainPane.setAlignment(Pos.CENTER);
