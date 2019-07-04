@@ -22,6 +22,14 @@ public class Account implements Serializable {
         this.balance = balance;
     }
 
+    public Account(int id, String fName, String lName, double balance, int pin){
+        this.id = id;
+        this.firstName = fName;
+        this.lastName = lName;
+        this.balance = balance;
+        this.pin = pin;
+    }
+
     public int getId() {
         return id;
     }
@@ -72,5 +80,9 @@ public class Account implements Serializable {
 
     public void setPin(int pin) {
         this.pin = pin;
+    }
+    @Override
+    public String toString(){
+        return  Integer.toString(id);
     }
 }

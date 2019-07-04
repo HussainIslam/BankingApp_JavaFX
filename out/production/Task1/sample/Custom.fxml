@@ -6,13 +6,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <VBox alignment="CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <HBox alignment="TOP_CENTER" layoutX="50.0" layoutY="50.0" maxWidth="-Infinity" prefHeight="48.0" prefWidth="505.0">
-         <children>
-            <Label text="Enter an Account Number: " />
-            <TextField prefHeight="20.0" prefWidth="200.0" />
-         </children>
-      </HBox>
-      <Button text="Submit" />
-   </children>
+   <HBox alignment="TOP_CENTER" layoutX="50.0" layoutY="50.0" maxWidth="-Infinity" prefHeight="48.0" prefWidth="505.0">
+      <Label text="Enter an Account Number: "/>
+      <TextField prefHeight="20.0" prefWidth="200.0" fx:id="inputAccountNumber"/>
+   </HBox>
+   <Button text="Submit" fx:id="submitAccountNumber" onAction="#onButtonClicked"/>
 </VBox>
