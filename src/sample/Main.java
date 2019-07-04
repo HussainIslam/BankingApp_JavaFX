@@ -18,6 +18,8 @@ import javafx.stage.Window;
 import javafx.stage.WindowEvent;
 
 import java.io.*;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -49,7 +51,7 @@ public class Main extends Application {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(fileName))){
             for(int i = 0; i < 10; i++){
                 temp = (Account) in.readObject();
-                System.out.println("Account number " +temp.getId() +" has balance of " +temp.getBalance());
+                //System.out.println("Account number " +temp.getId() +" has balance of " +temp.getBalance());
             }
         }
 
@@ -154,6 +156,7 @@ public class Main extends Application {
                 }
                 else{
                     final int i = index;
+                    NumberFormat formatter = new DecimalFormat("#0.00");
                     VBox account = new VBox();
                     account.setAlignment(Pos.CENTER);
                     account.setSpacing(10);
@@ -167,13 +170,14 @@ public class Main extends Application {
                     actionPanel.setHgap(10);
 
                     Button btnBalance =  new Button("Check Balance");
-                    Label txtBalance = new Label("Current balance: " +accountList.get(i).getBalance());
+                    Label txtBalance = new Label("Current balance: " +formatter.format(accountList.get(i).getBalance()));
                     actionPanel.add(btnBalance, 0, 0);
                     actionPanel.add(txtBalance, 1, 0);
                     btnBalance.setPrefWidth(100);
                     btnBalance.setOnAction(bal ->{
                         try{
-                            txtBalance.setText("Current balance: " +accountList.get(i).getBalance());
+
+                            txtBalance.setText("Current balance: " +formatter.format(accountList.get(i).getBalance()));
                         }
                         catch (Exception ex){
                             this.showError("Error", "Error in retriving Balance", "Couldnt not retrieve the current balance for the account");
@@ -195,7 +199,7 @@ public class Main extends Application {
                             else{
                                 this.showError("Warning!!", "Can not withdraw", "You can not withdraw money more than your balance ");
                             }
-                            txtBalance.setText("Current balance: " +accountList.get(i).getBalance());
+                            txtBalance.setText("Current balance: " +formatter.format(accountList.get(i).getBalance()));
                         }
                         catch (Exception ex){
                             this.showError("Error", "Error in withdrawing money", "There was an error withdrawing money from the account");
@@ -212,7 +216,7 @@ public class Main extends Application {
                         try{
                             int dAmount = Integer.parseInt(depositInput.getText());
                             accountList.get(i).setBalance(accountList.get(i).getBalance() + dAmount);
-                            txtBalance.setText("Current balance: " +accountList.get(i).getBalance());
+                            txtBalance.setText("Current balance: " +formatter.format(accountList.get(i).getBalance()));
                         }
                         catch (Exception ex){
                             this.showError("Error", "Error in depositing money", "There was an error depositing money to the account");

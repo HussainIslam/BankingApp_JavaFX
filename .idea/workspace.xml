@@ -21,10 +21,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
+            <state relative-caret-position="320">
+              <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
               <folding>
-                <element signature="e#10925#10926#0" expanded="true" />
+                <element signature="e#11325#11326#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,7 +157,21 @@
       <option name="project" value="LOCAL" />
       <updated>1562272904997</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added error message for withdrawal and warning for negative balance">
+      <created>1562274106079</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562274106079</updated>
+    </task>
+    <task id="LOCAL-00004" summary="error message for depositing added">
+      <created>1562275565342</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1562275565342</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -174,7 +188,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17558528" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22073579" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -196,7 +210,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="application working without error handling" />
     <MESSAGE value="added account creation error message" />
-    <option name="LAST_COMMIT_MESSAGE" value="added account creation error message" />
+    <MESSAGE value="added error message for withdrawal and warning for negative balance" />
+    <MESSAGE value="error message for depositing added" />
+    <option name="LAST_COMMIT_MESSAGE" value="error message for depositing added" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/javafx-sdk-12.0.1/lib/javafx.base.jar!/javafx/event/EventHandler.class">
@@ -228,10 +244,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
+        <state relative-caret-position="320">
+          <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
           <folding>
-            <element signature="e#10925#10926#0" expanded="true" />
+            <element signature="e#11325#11326#0" expanded="true" />
           </folding>
         </state>
       </provider>
