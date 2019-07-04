@@ -122,6 +122,11 @@ public class Main extends Application {
                     Button register = new Button("Register");
                     registration.getChildren().add(register);
 
+
+                    Scene newScene = new Scene(registration, 400,400);
+                    Stage regStage = new Stage();
+                    regStage.setScene(newScene);
+                    regStage.show();
                     register.setOnAction(event -> {
                         String fName = textFirstName.getText();
                         String lName = textLastName.getText();
@@ -129,14 +134,17 @@ public class Main extends Application {
                         double balance = Double.parseDouble(textBalance.getText());
                         int pin = Integer.parseInt(textPIN.getText());
                         accountList.add(new Account(id, fName, lName, balance, pin));
+
+                        HBox success = new HBox();
+                        Label labelSucess = new Label("New Account Created Successfully!");
+                        success.setAlignment(Pos.CENTER);
+                        success.getChildren().add(labelSucess);
+                        Scene successScene = new Scene(success, 400, 400);
+                        regStage.setScene(successScene);
+                        regStage.show();
                         System.out.println("New Account Created");
 
                     });
-
-                    Scene newScene = new Scene(registration, 400,400);
-                    Stage regStage = new Stage();
-                    regStage.setScene(newScene);
-                    regStage.show();
 
                 }
                 else{
@@ -145,7 +153,7 @@ public class Main extends Application {
                     account.setAlignment(Pos.CENTER);
                     account.setSpacing(10);
 
-                    Label welcome = new Label("Welcome Account Number: " +i);
+                    Label welcome = new Label("Welcome Account Number: " +accountList.get(i).getId());
                     Label options = new Label("What would you like to do?");
 
                     GridPane actionPanel = new GridPane();
@@ -163,7 +171,7 @@ public class Main extends Application {
                     });
 
 
-                    Button btnWithdraw =  new Button("Withdrawy Money");
+                    Button btnWithdraw =  new Button("Withdraw");
                     TextField withdrawInput = new TextField();
                     actionPanel.add(btnWithdraw, 0, 1);
                     actionPanel.add(withdrawInput, 1, 1);
@@ -175,7 +183,7 @@ public class Main extends Application {
 
                     });
 
-                    Button btnDeposit =  new Button("Deposit Money");
+                    Button btnDeposit =  new Button("Deposit");
                     TextField depositInput = new TextField();
                     actionPanel.add(btnDeposit, 0, 2);
                     actionPanel.add(depositInput, 1, 2);
@@ -186,7 +194,7 @@ public class Main extends Application {
                         txtBalance.setText("Current balance: " +accountList.get(i).getBalance());
                     });
 
-                    Button btnExit =  new Button("Exit the Account");
+                    Button btnExit =  new Button("Exit");
                     actionPanel.add(btnExit, 0, 3);
                     btnExit.setPrefWidth(100);
                     account.getChildren().addAll(welcome,options, actionPanel);
