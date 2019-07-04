@@ -139,6 +139,9 @@ public class Main extends Application {
                             int id = Integer.parseInt(accountNumber);
                             double balance = Double.parseDouble(textBalance.getText());
                             int pin = Integer.parseInt(textPIN.getText());
+                            if(balance < 0 || pin < 0){
+                                throw new Exception();
+                            }
                             accountList.add(new Account(id, fName, lName, balance, pin));
                             HBox success = new HBox();
                             Label labelSucess = new Label("New Account Created Successfully!");
