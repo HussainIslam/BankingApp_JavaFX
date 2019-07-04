@@ -210,11 +210,13 @@ public class Main extends Application {
                     btnDeposit.setPrefWidth(100);
                     btnDeposit.setOnAction(dep ->{
                         try{
-
+                            int dAmount = Integer.parseInt(depositInput.getText());
+                            accountList.get(i).setBalance(accountList.get(i).getBalance() + dAmount);
+                            txtBalance.setText("Current balance: " +accountList.get(i).getBalance());
                         }
-                        int dAmount = Integer.parseInt(depositInput.getText());
-                        accountList.get(i).setBalance(accountList.get(i).getBalance() + dAmount);
-                        txtBalance.setText("Current balance: " +accountList.get(i).getBalance());
+                        catch (Exception ex){
+                            this.showError("Error", "Error in depositing money", "There was an error depositing money to the account");
+                        }
                     });
 
                     Button btnExit =  new Button("Exit");
