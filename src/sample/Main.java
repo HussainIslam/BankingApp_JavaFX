@@ -143,13 +143,19 @@ public class Main extends Application {
                                 throw new Exception();
                             }
                             accountList.add(new Account(id, fName, lName, balance, pin));
-                            HBox success = new HBox();
+                            VBox success = new VBox();
+                            success.setSpacing(10);
                             Label labelSucess = new Label("New Account Created Successfully!");
+                            Button btnSuccessOk = new Button("Ok");
+                            btnSuccessOk.setPrefWidth(70);
                             success.setAlignment(Pos.CENTER);
-                            success.getChildren().add(labelSucess);
-                            Scene successScene = new Scene(success, 400, 400);
+                            success.getChildren().addAll(labelSucess, btnSuccessOk);
+                            Scene successScene = new Scene(success, 200, 200);
                             regStage.setScene(successScene);
                             regStage.show();
+                            btnSuccessOk.setOnAction(okEvent -> {
+                                regStage.hide();
+                            });
                         }
                         catch (Exception ex){
                             showError("Error", "Error creating Account object",
