@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.*;
@@ -122,8 +123,12 @@ public class Main extends Application {
                     registration.getChildren().add(register);
 
                     register.setOnAction(event -> {
-                        //String fName = textFirstName.getText();
-                        //String lName = textLastName.getText();
+                        String fName = textFirstName.getText();
+                        String lName = textLastName.getText();
+                        int id = Integer.parseInt(accountNumber);
+                        double balance = Double.parseDouble(textBalance.getText());
+                        int pin = Integer.parseInt(textPIN.getText());
+                        accountList.add(new Account(id, fName, lName, balance, pin));
                         System.out.println("New Account Created");
 
                     });
@@ -142,22 +147,49 @@ public class Main extends Application {
 
                     Label welcome = new Label("Welcome Account Number: " +i);
                     Label options = new Label("What would you like to do?");
+
+                    GridPane actionPanel = new GridPane();
+                    actionPanel.setAlignment(Pos.CENTER);
+                    actionPanel.setVgap(10);
+                    actionPanel.setHgap(10);
+
                     Button btnBalance =  new Button("Check Balance");
+                    Label txtBalance = new Label("Current balance: " +accountList.get(i).getBalance());
+                    actionPanel.add(btnBalance, 0, 0);
+                    actionPanel.add(txtBalance, 1, 0);
+                    btnBalance.setPrefWidth(100);
                     btnBalance.setOnAction(bal ->{
-                        System.out.println("The balance is " +accountList.get(i).getBalance());
+                        txtBalance.setText("Current balance: " +accountList.get(i).getBalance());
                     });
+
+
                     Button btnWithdraw =  new Button("Withdrawy Money");
+                    TextField withdrawInput = new TextField();
+                    actionPanel.add(btnWithdraw, 0, 1);
+                    actionPanel.add(withdrawInput, 1, 1);
+                    btnWithdraw.setPrefWidth(100);
                     btnWithdraw.setOnAction(wit ->{
-                        accountList.get(i).setBalance(accountList.get(i).getBalance() - 10);
+                        int wAmount = Integer.parseInt(withdrawInput.getText());
+                        accountList.get(i).setBalance(accountList.get(i).getBalance() - wAmount);
+                        txtBalance.setText("Current balance: " +accountList.get(i).getBalance());
 
                     });
+
                     Button btnDeposit =  new Button("Deposit Money");
+                    TextField depositInput = new TextField();
+                    actionPanel.add(btnDeposit, 0, 2);
+                    actionPanel.add(depositInput, 1, 2);
+                    btnDeposit.setPrefWidth(100);
                     btnDeposit.setOnAction(dep ->{
-                        accountList.get(i).setBalance(accountList.get(i).getBalance() + 10);
+                        int dAmount = Integer.parseInt(depositInput.getText());
+                        accountList.get(i).setBalance(accountList.get(i).getBalance() + dAmount);
+                        txtBalance.setText("Current balance: " +accountList.get(i).getBalance());
                     });
 
                     Button btnExit =  new Button("Exit the Account");
-                    account.getChildren().addAll(welcome,options, btnBalance, btnWithdraw, btnDeposit, btnExit);
+                    actionPanel.add(btnExit, 0, 3);
+                    btnExit.setPrefWidth(100);
+                    account.getChildren().addAll(welcome,options, actionPanel);
 
                     Scene newScene = new Scene(account, 400, 400);
                     Stage emptyInput = new Stage();
