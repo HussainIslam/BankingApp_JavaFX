@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7028be78-3d7b-4210-bf7e-361eb22b0ea3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sample/ErrorMessages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Task1/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Task1/sample/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
@@ -22,19 +21,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="157" selection-start-line="157" selection-end-line="157" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/ErrorMessages.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+            <state relative-caret-position="16">
+              <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#10925#10926#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -160,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1562263748589</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added account creation error message">
+      <created>1562272904997</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1562272904997</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -198,7 +195,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="application working without error handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="application working without error handling" />
+    <MESSAGE value="added account creation error message" />
+    <option name="LAST_COMMIT_MESSAGE" value="added account creation error message" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/javafx-sdk-12.0.1/lib/javafx.base.jar!/javafx/event/EventHandler.class">
@@ -220,7 +218,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ErrorMessages.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
+        <state relative-caret-position="464">
           <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -230,8 +228,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
+        <state relative-caret-position="16">
+          <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
+          <folding>
+            <element signature="e#10925#10926#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

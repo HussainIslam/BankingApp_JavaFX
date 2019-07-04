@@ -147,11 +147,8 @@ public class Main extends Application {
                             regStage.show();
                         }
                         catch (Exception ex){
-                            Alert alert = new Alert(Alert.AlertType.ERROR);
-                            alert.setTitle("Error!");
-                            alert.setHeaderText("Can not create Account");
-                            alert.setContentText("The Account could not be created! Please try with valid dataset");
-                            alert.showAndWait();
+                            showError("Error", "Error creating Account object",
+                                    "Could not create New Account with the dataset. Please verify the dataset and try again.");
                         }
                     });
                 }
@@ -175,7 +172,12 @@ public class Main extends Application {
                     actionPanel.add(txtBalance, 1, 0);
                     btnBalance.setPrefWidth(100);
                     btnBalance.setOnAction(bal ->{
-                        txtBalance.setText("Current balance: " +accountList.get(i).getBalance());
+                        try{
+                            txtBalance.setText("Current balance: " +accountList.get(i).getBalance());
+                        }
+                        catch (Exception ex){
+                            this.showError("Error", "Error in retriving Balance", "Couldnt not retrieve the current balance for the account");
+                        }
                     });
 
 
@@ -185,9 +187,19 @@ public class Main extends Application {
                     actionPanel.add(withdrawInput, 1, 1);
                     btnWithdraw.setPrefWidth(100);
                     btnWithdraw.setOnAction(wit ->{
-                        int wAmount = Integer.parseInt(withdrawInput.getText());
-                        accountList.get(i).setBalance(accountList.get(i).getBalance() - wAmount);
-                        txtBalance.setText("Current balance: " +accountList.get(i).getBalance());
+                        try{
+                            int wAmount = Integer.parseInt(withdrawInput.getText());
+                            if (accountList.get(i).getBalance() - wAmount >= 0) {
+                                accountList.get(i).setBalance(accountList.get(i).getBalance() - wAmount);
+                            }
+                            else{
+                                this.showError("Warning!!", "Can not withdraw", "You can not withdraw money more than your balance ");
+                            }
+                            txtBalance.setText("Current balance: " +accountList.get(i).getBalance());
+                        }
+                        catch (Exception ex){
+                            this.showError("Error", "Error in withdrawing money", "There was an error withdrawing money from the account");
+                        }
 
                     });
 
@@ -197,6 +209,9 @@ public class Main extends Application {
                     actionPanel.add(depositInput, 1, 2);
                     btnDeposit.setPrefWidth(100);
                     btnDeposit.setOnAction(dep ->{
+                        try{
+
+                        }
                         int dAmount = Integer.parseInt(depositInput.getText());
                         accountList.get(i).setBalance(accountList.get(i).getBalance() + dAmount);
                         txtBalance.setText("Current balance: " +accountList.get(i).getBalance());
@@ -228,6 +243,13 @@ public class Main extends Application {
 
     }
 
+    public void showError(String title, String header, String content){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
 
     public static void main(String[] args) {
         launch(args);
